@@ -33,6 +33,8 @@ parameters:
   apache_default_domain:
     type: string
     default: exmaple.com
+  upstream_server:
+    type: string
 
 resources:
   upload_role_config:
@@ -80,7 +82,7 @@ resources:
         - { name: 'fpc', port: '6381', persistent: 'FALSE', maxmemory: '1gb' }
         - { name: 'obj', port: '6379', persistent: 'FALSE', maxmemory: '1gb' }
         - { name: 'ses', port: '6380', persistent: 'TRUE', maxmemory: '1gb' }
-        nginx_vhost_str: 'example.com'
+        nginx_vhost_str: { get_param: apache_default_domain } 
         nginx_vhost_template: 'magento2_secondary'
         firewall_global_rules: [ "0.0.0.0,0,22,tcp", "0.0.0.0,0,80,tcp", "0.0.0.0,0,443,tcp"]
       config:

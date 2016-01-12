@@ -385,6 +385,7 @@ resources:
               template: stack-secondary-%index%
               params:
                 stack: { get_param: "OS::stack_name" }
+          upstream_server: { get_attr: [ magento_server, networks, private, 0] }
   #Cloud Load Balancer
   load_balancer:
     type: Rackspace::Cloud::LoadBalancer
