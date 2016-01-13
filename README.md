@@ -1,8 +1,8 @@
-[![Circle CI](https://circleci.com/gh/rackspace-orchestration-templates/magento-small/tree/master.png?style=shield)](https://circleci.com/gh/rackspace-orchestration-templates/magento-small)
+[![Circle CI](https://circleci.com/gh/rackspace-orchestration-templates/magento-small/tree/master.png?style=shield)](https://circleci.com/gh/rackspace-orchestration-templates/magento2-small)
 #### Small Magento Site
 
   A Single Linux server with
-  [Magento 1.9.2.0 Community Edition](http://www.magentocommerce.com/product/community-edition/)
+  [Magento 2.0.0 Community Edition](http://www.magentocommerce.com/product/community-edition/)
   installed with [nginx](http://nginx.org/en/), [PHP FPM](http://php-fpm.org/about/), a
   Cloud Load Balancer for content caching, and a Cloud Database running
   [Percona](https://www.percona.com/software/mysql-database/percona-server).

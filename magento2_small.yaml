@@ -2,21 +2,28 @@ heat_template_version: 2015-10-15
 
 description: |
  #### Production
+ 
+  This stack is intended for low to medium traffic production
+  websites and can be scaled as needed to accommodate future
+  growth.  This stack includes a Cloud Load Balancer, Cloud
+  Database, and a Master server (plus optional secondary
+  servers).  It also includes Cloud Monitoring and Cloud
+  Backups.
 
- This stack is intended for low to medium traffic production
- websites and can be scaled as needed to accommodate future
- growth.  This stack includes a Cloud Load Balancer, Cloud
- Database, and a Master server (plus optional secondary
- servers).  It also includes Cloud Monitoring and Cloud
- Backups.
+  This stack is running
+  [Magento 2.0.0 Community Edition](http://www.magentocommerce.com/product/community-edition/),
+  [nginx](http://nginx.org/en/),
+  and [PHP FPM](http://php-fpm.org/about/).
+  with a Cloud Database running
+  [Percona](https://www.percona.com/software/mysql-database/percona-server).
 
- This stack is running 
- [Magento 1.9.2.0 Community Edition](http://www.magentocommerce.com/product/community-edition/),
- [nginx](http://nginx.org/en/),
- and [PHP FPM](http://php-fpm.org/about/).
- with a Cloud Database running
- [Percona](https://www.percona.com/software/mysql-database/percona-server).
-
+  #NOTE
+  Because this template uses a Percona Cloud Database, this
+  template can only be used in the following regions:
+  Northern Virginia (IAD)
+  Chicago (ORD)
+  Dallas (DFW)
+  London (LON)
 parameter_groups:
 - label: Magento Settings
   parameters:
@@ -147,8 +154,7 @@ resources:
             stack: { get_param: "OS::stack_name" }
       flavor: { get_param: database_flavor }
       size: { get_param: database_disk }
-      datastore_type: mysql
-      datastore_version: "5.6"
+      datastore_type: percona
       databases:
       - name: magento
       users:

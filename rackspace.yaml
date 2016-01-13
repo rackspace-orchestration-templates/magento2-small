@@ -1,9 +1,9 @@
 schema-version: 1.0.0
 application-family: eCommerce
 application-name: Magento
-application-version: 1.9.2.0
+application-version: 2.0.0
 flavor: Production
-flavor-weight: 2
+flavor-weight: 1
 popularity: 4
 reach-info:
   tattoo: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/magento-tattoo.png
@@ -16,11 +16,11 @@ hidden_outputs:
   - mysql_password
   - ssh_private_key
 abstract: |
-  Magento is an open-source eCommerce platform written in PHP.
+  Magento 2 is an open-source eCommerce platform written in PHP.
 instructions: |
   #### Getting Started
-  If you're new to Magento Community Edition, the [Magento User
-  Guide](http://www.magentocommerce.com/resources/user-guide-download) will
+  If you're new to Magento 2 Community Edition, the [Magento User
+  Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) will
   step you through the process of configuring and managing your store. This
   guide is free, but does require you to provide a valid email address to
   receive it.
@@ -130,7 +130,7 @@ description: |
   Backups.
 
   This stack is running 
-  [Magento 1.9.2.0 Community Edition](http://www.magentocommerce.com/product/community-edition/),
+  [Magento 2.0.0 Community Edition](http://www.magentocommerce.com/product/community-edition/),
   [nginx](http://nginx.org/en/),
   and [PHP FPM](http://php-fpm.org/about/).
   with a Cloud Database running
