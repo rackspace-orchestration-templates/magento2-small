@@ -2,7 +2,7 @@ heat_template_version: 2015-10-15
 
 description: |
  #### Production
- 
+
   This stack is intended for low to medium traffic production
   websites and can be scaled as needed to accommodate future
   growth.  This stack includes a Cloud Load Balancer, Cloud
@@ -264,7 +264,7 @@ resources:
       signal_transport: TEMP_URL_SIGNAL
       input_values:
         lsync_private_key: { get_attr: [ssh_key, private_key] }
-        lsync_dirs: ['/var/www/vhosts', '/etc/nginx/conf.d']
+        lsync_dirs: ['/var/www/vhosts']
         lsync_servers: { get_attr: [magento_secondary, private_ip] }
         firewall_global_rules: [ "0.0.0.0,0,22,tcp", "0.0.0.0,0,80,tcp", "0.0.0.0,0,443,tcp"]
         firewall_nodes: { get_attr: [magento_secondary, private_ip] }
